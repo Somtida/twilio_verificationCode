@@ -1,0 +1,24 @@
+<h1>Users</h1>
+
+<pre>{{ users | json }}</pre>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>display name</th>
+      <th>email</th>
+      <th>Authorization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users track by $index">
+      <td>{{user.displayName}}</td>
+      <td>{{user.email}}</td>
+      <td>
+
+        <button class="btn btn-danger" ng-show="{{user.admin}}" ng-click="toggleAuthorization(user)">admin</button>
+        <button class="btn btn-info" ng-show="{{!user.admin}}" ng-click="toggleAuthorization(user)">user</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

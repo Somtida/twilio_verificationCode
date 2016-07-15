@@ -1,0 +1,23 @@
+<h1>Profile</h1>
+
+<div class="alert alert-danger" ng-show="!user.confirmKey && user.phone">
+  Please confirm your phone number!
+  <a ui-sref="confirmation" ng-click="sendToken()">click here to confirm!</a>
+</div>
+
+<img ng-src="{{user.profileImage}}">
+
+<pre>{{user | json}}</pre>
+<div class="phoneArea">
+<form ng-submit="addPhone()">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Phone" ng-model='user.phone'>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-block">Add</button>
+  </div>
+</form>
+</div>
