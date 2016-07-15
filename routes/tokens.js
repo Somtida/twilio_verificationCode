@@ -23,7 +23,7 @@ router.post('/send', User.authorize(), (req, res) => {
 
       client.sendMessage({
         from: process.env.TWILIO_PHONE_NUMBER,
-        to: '+16508787182',
+        to: '+16508975989',
         body: token.code+'your valification code'
       }, (err, response) => {
         console.log("err: ",err);
