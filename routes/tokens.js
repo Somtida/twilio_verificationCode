@@ -21,14 +21,14 @@ router.post('/send', User.authorize(), (req, res) => {
       console.log('token:' ,token)
 
 
-      // client.sendMessage({
-      //   from: process.env.TWILIO_PHONE_NUMBER,
-      //   to: '+16508787182',
-      //   body: token.code+'your valification code'
-      // }, (err, response) => {
-      //   console.log("err: ",err);
-      //   console.log("response: ",response);
-      // });
+      client.sendMessage({
+        from: process.env.TWILIO_PHONE_NUMBER,
+        to: '+16508787182',
+        body: token.code+'your valification code'
+      }, (err, response) => {
+        console.log("err: ",err);
+        console.log("response: ",response);
+      });
 
     });
 
